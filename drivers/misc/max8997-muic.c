@@ -2030,7 +2030,9 @@ static void max8997_muic_mhl_detect(struct work_struct *work)
 			mdata->mhl_cb(MAX8997_MUIC_ATTACHED);
 #endif
 	}
+#ifndef CONFIG_MACH_U1
 out:
+#endif
 	mutex_unlock(&info->mutex);
 }
 
