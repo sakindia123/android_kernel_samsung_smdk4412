@@ -368,11 +368,13 @@ KBUILD_CFLAGS   := -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs \
 		   -Werror-implicit-function-declaration \
 		   -Wno-format-security \
 		   -fno-delete-null-pointer-checks \
-                   -mtune=cortex-a9 \
-                   -march=armv7-a \
-                   -mfpu=neon \
-                   -ffast-math \
-                   -pipe 
+                   -mtune=cortex-a9 -march=armv7-a \
+                   -ftree-vectorize -floop-interchange -floop-strip-mine -floop-block \
+                   -fgraphite-identity -fsched-spec-load \
+                   -fmodulo-sched -fmodulo-sched-allow-regmoves \
+                   -funswitch-loops -fpredictive-commoning -fgcse-after-reload -fno-tree-vectorize \
+                   -mfpu=neon -ffast-math -pipe \
+                   -fipa-cp-clone -Wno-array-bounds
 		   
 KBUILD_AFLAGS_KERNEL :=
 KBUILD_CFLAGS_KERNEL :=
