@@ -193,7 +193,7 @@ SUBARCH := $(shell uname -m | sed -e s/i.86/i386/ -e s/sun4u/sparc64/ \
 # Note: Some architectures assign CROSS_COMPILE in their arch/*/Makefile
 export KBUILD_BUILDHOST := $(SUBARCH)
 ARCH		?= arm
-CROSS_COMPILE	?= /media/Main_Storage/android_toolchains/arm-eabi-linaro-4.6.2/bin/arm-eabi-
+CROSS_COMPILE	?= /media/Main_Storage/android_toolchains/arm-eabi-4.7-32bit-master/bin/arm-eabi-
 
 # Architecture as present in compile.h
 UTS_MACHINE 	:= $(ARCH)
@@ -366,11 +366,11 @@ KBUILD_CPPFLAGS := -D__KERNEL__
 KBUILD_CFLAGS   := -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs \
 		   -fno-strict-aliasing -fno-common \
 		   -Werror-implicit-function-declaration \
-		   -Wno-format-security \
+		   -Wno-format-security -marm -mfloat-abi=softfp \
 		   -fno-delete-null-pointer-checks \
                    -mtune=cortex-a9 -march=armv7-a \
-                   -ftree-vectorize -floop-interchange -floop-strip-mine -floop-block \
-                   -fgraphite-identity -fsched-spec-load \
+                   -ftree-vectorize -funsafe-math-optimizations \
+                   -fsched-spec-load -mvectorize-with-neon-quad \
                    -fmodulo-sched -fmodulo-sched-allow-regmoves \
                    -funswitch-loops -fpredictive-commoning -fgcse-after-reload -fno-tree-vectorize \
                    -mfpu=neon -ffast-math -pipe \
