@@ -22,6 +22,10 @@ dir /stage1 755 0 0
 file /stage1/busybox /home/sarthak/android_kernel_samsung_smdk4412/usr/galaxys2_initramfs_files/busybox 755 0 0
 file /stage1/init /home/sarthak/android_kernel_samsung_smdk4412/usr/galaxys2_initramfs_files/init 755 0 0
 dir /sys 755 0 0
+dir /lib/modules 755 0 0
+file /lib/modules/Si4709_driver.ko drivers/samsung/fm_si4709/Si4709_driver.ko 644 0 0
+file /lib/modules/dhd.ko drivers/net/wireless/bcmdhd/dhd.ko 644 0 0
+file /lib/modules/scsi_wait_scan.ko drivers/scsi/scsi_wait_scan.ko 644 0 0
 dir /mnt 755 0 0
 dir /mnt/.lfs 755 0 0
 file /stage1/boot.cpio /home/sarthak/android_kernel_samsung_smdk4412/usr/ramdisk.cpio 644 0 0
