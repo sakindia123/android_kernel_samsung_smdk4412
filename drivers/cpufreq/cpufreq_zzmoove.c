@@ -217,13 +217,13 @@
 
 // ZZ: midnight and zzmoove default values
 #define DEF_FREQUENCY_UP_THRESHOLD		(70)
-#define DEF_FREQUENCY_UP_THRESHOLD_HOTPLUG1	(68)	// ZZ: default for hotplug up threshold for cpu1 (cpu0 stays allways on)
-#define DEF_FREQUENCY_UP_THRESHOLD_HOTPLUG2	(68)	// ZZ: default for hotplug up threshold for cpu2 (cpu0 stays allways on)
-#define DEF_FREQUENCY_UP_THRESHOLD_HOTPLUG3	(68)	// ZZ: default for hotplug up threshold for cpu3 (cpu0 stays allways on)
+#define DEF_FREQUENCY_UP_THRESHOLD_HOTPLUG1	(68)	// ZZ: default for hotplug up threshold for cpu1 (cpu0 stays always on)
+#define DEF_FREQUENCY_UP_THRESHOLD_HOTPLUG2	(68)	// ZZ: default for hotplug up threshold for cpu2 (cpu0 stays always on)
+#define DEF_FREQUENCY_UP_THRESHOLD_HOTPLUG3	(68)	// ZZ: default for hotplug up threshold for cpu3 (cpu0 stays always on)
 #define DEF_FREQUENCY_DOWN_THRESHOLD		(52)
-#define DEF_FREQUENCY_DOWN_THRESHOLD_HOTPLUG1	(55)	// ZZ: default for hotplug down threshold for cpu1 (cpu0 stays allways on)
-#define DEF_FREQUENCY_DOWN_THRESHOLD_HOTPLUG2	(55)	// ZZ: default for hotplug down threshold for cpu2 (cpu0 stays allways on)
-#define DEF_FREQUENCY_DOWN_THRESHOLD_HOTPLUG3	(55)	// ZZ: default for hotplug down threshold for cpu3 (cpu0 stays allways on)
+#define DEF_FREQUENCY_DOWN_THRESHOLD_HOTPLUG1	(55)	// ZZ: default for hotplug down threshold for cpu1 (cpu0 stays always on)
+#define DEF_FREQUENCY_DOWN_THRESHOLD_HOTPLUG2	(55)	// ZZ: default for hotplug down threshold for cpu2 (cpu0 stays always on)
+#define DEF_FREQUENCY_DOWN_THRESHOLD_HOTPLUG3	(55)	// ZZ: default for hotplug down threshold for cpu3 (cpu0 stays always on)
 #define DEF_IGNORE_NICE				(0)	// ZZ: default for ignore nice load
 #define DEF_FREQ_STEP				(5)	// ZZ: default for freq step at awake
 #define DEF_FREQ_STEP_SLEEP			(5)	// ZZ: default for freq step at early suspend
@@ -478,10 +478,8 @@ static struct dbs_tuners {
  *                added search limit for more efficent frequency searching and better hard/softlimit handling
  */
 
-static int mn_freqs[17][3]={
-    {1800000,1800000,1700000},
-    {1700000,1800000,1600000},
-    {1600000,1700000,1500000},
+static int mn_freqs[16][3]={
+    {1600000,1600000,1500000},
     {1500000,1600000,1400000},
     {1400000,1500000,1300000},
     {1300000,1400000,1200000},
@@ -491,11 +489,12 @@ static int mn_freqs[17][3]={
     { 900000,1000000, 800000},
     { 800000, 900000, 700000},
     { 700000, 800000, 600000},
-    { 600000, 700000, 400000},
-    { 500000, 600000, 300000},
-    { 400000, 500000, 200000},
+    { 600000, 700000, 500000},
+    { 500000, 600000, 400000},
+    { 400000, 500000, 300000},
     { 300000, 400000, 200000},
-    { 200000, 300000, 200000}
+    { 200000, 300000, 100000},
+    { 100000, 200000, 100000},
 };
 
 /*
@@ -508,24 +507,23 @@ static int mn_freqs[17][3]={
  *                added search limit for more efficent frequency searching and better hard/softlimit handling
  */
 
-static int mn_freqs_power[17][3]={
-    {1800000,1800000,1700000},
-    {1700000,1800000,1600000},
-    {1600000,1800000,1500000},
-    {1500000,1700000,1400000},
-    {1400000,1600000,1300000},
-    {1300000,1500000,1200000},
-    {1200000,1400000,1100000},
-    {1100000,1300000,1000000},
-    {1000000,1200000, 900000},
-    { 900000,1100000, 800000},
-    { 800000,1000000, 700000},
-    { 700000, 900000, 600000},
-    { 600000, 800000, 500000},
-    { 500000, 700000, 400000},
-    { 400000, 600000, 300000},
-    { 300000, 500000, 200000},
-    { 200000, 400000, 200000}
+static int mn_freqs_power[16][3]={
+    {1600000,1600000,1500000},
+    {1500000,1600000,1400000},
+    {1400000,1500000,1300000},
+    {1300000,1400000,1200000},
+    {1200000,1300000,1100000},
+    {1100000,1200000,1000000},
+    {1000000,1100000, 900000},
+    { 900000,1000000, 800000},
+    { 800000, 900000, 700000},
+    { 700000, 800000, 600000},
+    { 600000, 700000, 500000},
+    { 500000, 600000, 400000},
+    { 400000, 500000, 300000},
+    { 300000, 400000, 200000},
+    { 200000, 300000, 100000},
+    { 100000, 200000, 100000},
 };
 
 static int mn_get_next_freq(unsigned int curfreq, unsigned int updown, unsigned int load) {
@@ -534,10 +532,10 @@ static int mn_get_next_freq(unsigned int curfreq, unsigned int updown, unsigned 
     
     if (load < dbs_tuners_ins.smooth_up)
     {
-	    for(i = max_scaling_freq_soft; i < 17; i++)
+	    for(i = max_scaling_freq_soft; i < 16; i++)
     	    {
 		if(curfreq == mn_freqs[i][MN_FREQ]) {
-		    if(dbs_tuners_ins.fast_scaling != 0 && i != 0 && i != 17 && updown != fast_scaling_down) {
+		    if(dbs_tuners_ins.fast_scaling != 0 && i != 0 && i != 16 && updown != fast_scaling_down) {
 			f = i;
 			if(updown == 1){
 			f = f - scaling_mode;
@@ -555,10 +553,10 @@ static int mn_get_next_freq(unsigned int curfreq, unsigned int updown, unsigned 
     }
     else
     {
-	    for(i = max_scaling_freq_soft; i < 17; i++)
+	    for(i = max_scaling_freq_soft; i < 16; i++)
     	    {
         	if(curfreq == mn_freqs_power[i][MN_FREQ]) {
-		    if(dbs_tuners_ins.fast_scaling != 0 && i != 0 && i != 17 && updown != fast_scaling_down) {
+		    if(dbs_tuners_ins.fast_scaling != 0 && i != 0 && i != 16 && updown != fast_scaling_down) {
 			f = i;
 			if(updown == 1){
 			f = f - scaling_mode;
