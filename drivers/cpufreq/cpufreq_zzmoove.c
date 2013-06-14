@@ -1094,10 +1094,10 @@ static ssize_t store_freq_limit(struct kobject *a,
 	unsigned int input;
 	int ret;
 	int i=0;
-	int valid_freq[17]={1800000, 1700000, 1600000, 1500000, 1400000, 1300000, 1200000, 1100000, 1000000, 900000, 800000, 700000, 600000, 500000, 400000, 300000, 200000};
+	int valid_freq[16]={1600000, 1500000, 1400000, 1300000, 1200000, 1100000, 1000000, 900000, 800000, 700000, 600000, 500000, 400000, 300000, 200000, 100000};
 	ret = sscanf(buf, "%u", &input);
 
-	if (ret != 1 || input > 1800000 || (input < 200000 && input != 0))
+	if (ret != 1 || input > 1600000 || (input < 200000 && input != 0))
 		return -EINVAL;
 
 	if (input == 0) {
@@ -1128,10 +1128,10 @@ static ssize_t store_freq_limit_sleep(struct kobject *a,
 	unsigned int input;
 	int ret;
 	int i=0;
-	int valid_freq[17]={1800000, 1700000, 1600000, 1500000, 1400000, 1300000, 1200000, 1100000, 1000000, 900000, 800000, 700000, 600000, 500000, 400000, 300000, 200000};
+	int valid_freq[16]={1600000, 1500000, 1400000, 1300000, 1200000, 1100000, 1000000, 900000, 800000, 700000, 600000, 500000, 400000, 300000, 200000, 100000};
 	ret = sscanf(buf, "%u", &input);
 
-	if (ret != 1 || input > 1800000 || (input < 200000 && input != 0))
+	if (ret != 1 || input > 16	00000 || (input < 200000 && input != 0))
 		return -EINVAL;
 
         for (i=0; i<17; i++) {
@@ -1251,10 +1251,10 @@ static ssize_t store_lcdfreq_kick_in_freq(struct kobject *a, struct attribute *b
 	unsigned int input;
 	int ret;
 	int i=0;
-	int valid_freq[17]={1800000, 1700000, 1600000, 1500000, 1400000, 1300000, 1200000, 1100000, 1000000, 900000, 800000, 700000, 600000, 500000, 400000, 300000, 200000};
+	int valid_freq[16]={1600000, 1500000, 1400000, 1300000, 1200000, 1100000, 1000000, 900000, 800000, 700000, 600000, 500000, 400000, 300000, 200000, 100000};
 	ret = sscanf(buf, "%u", &input);
 
-	if (ret != 1 || input > 1800000 || (input < 200000 && input != 0))
+	if (ret != 1 || input > 1600000 || (input < 200000 && input != 0))
 		return -EINVAL;
 
         for (i=0; i<17; i++) {
@@ -1962,7 +1962,7 @@ static inline void dbs_timer_exit(struct cpu_dbs_info_s *dbs_info)
 static void powersave_early_suspend(struct early_suspend *handler)
 {
   int i=0;
-  int valid_freq[17]={1800000, 1700000, 1600000, 1500000, 1400000, 1300000, 1200000, 1100000, 1000000, 900000, 800000, 700000, 600000, 500000, 400000, 300000, 200000};
+  int valid_freq[16]={1600000, 1700000, 1600000, 1500000, 1400000, 1300000, 1200000, 1100000, 1000000, 900000, 800000, 700000, 600000, 500000, 400000, 300000, 200000, 100000};
   skip_hotplug_flag = 1; 						// ZZ: try to avoid deadlock by disabling hotplugging if we are in the middle of hotplugging logic
   suspend_flag = 1; 							// ZZ: we want to know if we are at suspend because of things that shouldn't be executed at suspend
   for (i = 0; i < 1000; i++);						// ZZ: wait a few samples to be sure hotplugging is off (never be sure so this is dirty)
@@ -2054,7 +2054,7 @@ static void powersave_early_suspend(struct early_suspend *handler)
 static void powersave_late_resume(struct early_suspend *handler)
 {
   int i=0;
-  int valid_freq[17]={1800000, 1700000, 1600000, 1500000, 1400000, 1300000, 1200000, 1100000, 1000000, 900000, 800000, 700000, 600000, 500000, 400000, 300000, 200000};
+  int valid_freq[16]={1600000, 1700000, 1600000, 1500000, 1400000, 1300000, 1200000, 1100000, 1000000, 900000, 800000, 700000, 600000, 500000, 400000, 300000, 200000, 100000};
   skip_hotplug_flag = 1; 						// ZZ: same as above skip hotplugging to avoid deadlocks
   suspend_flag = 0; 							// ZZ: we are resuming so reset supend flag
 
@@ -2130,7 +2130,7 @@ static int cpufreq_governor_dbs(struct cpufreq_policy *policy,
 	unsigned int j;
 	int rc;
 	int i=0;
-	int valid_freq[17]={1800000, 1700000, 1600000, 1500000, 1400000, 1300000, 1200000, 1100000, 1000000, 900000, 800000, 700000, 600000, 500000, 400000, 300000, 200000};
+	int valid_freq[16]={1600000, 1500000, 1400000, 1300000, 1200000, 1100000, 1000000, 900000, 800000, 700000, 600000, 500000, 400000, 300000, 200000, 100000};
 
 	this_dbs_info = &per_cpu(cs_cpu_dbs_info, cpu);
 
