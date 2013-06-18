@@ -1131,7 +1131,7 @@ static ssize_t store_freq_limit_sleep(struct kobject *a,
 	int valid_freq[16]={1600000, 1500000, 1400000, 1300000, 1200000, 1100000, 1000000, 900000, 800000, 700000, 600000, 500000, 400000, 300000, 200000, 100000};
 	ret = sscanf(buf, "%u", &input);
 
-	if (ret != 1 || input > 16	00000 || (input < 200000 && input != 0))
+	if (ret != 1 || input > 1600000 || (input < 200000 && input != 0))
 		return -EINVAL;
 
         for (i=0; i<17; i++) {
