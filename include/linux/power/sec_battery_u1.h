@@ -82,6 +82,4 @@ struct sec_bat_platform_data {
 #endif
 };
 
-extern void enable_bln_charging(int status);
-
 #endif /* __MACH_SEC_BATTERY_H */
