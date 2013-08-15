@@ -385,7 +385,7 @@ KBUILD_CFLAGS   := -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs \
                    -fmodulo-sched -fmodulo-sched-allow-regmoves \
                    -funswitch-loops -fpredictive-commoning -fgcse-after-reload -fno-tree-vectorize \
                    -mfpu=neon -ffast-math -pipe \
-                   -fipa-cp-clone -Wno-array-bounds
+                   -fipa-cp-clone -Wno-array-bounds -fno-pic -munaligned-access
 		   
 KBUILD_AFLAGS_KERNEL :=
 KBUILD_CFLAGS_KERNEL :=
