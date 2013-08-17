@@ -21,41 +21,66 @@ dir /proc 755 0 0
 dir /stage1 755 0 0
 file /stage1/busybox /home/sarthak/android_kernel_samsung_smdk4412/usr/galaxys2_initramfs_files/busybox 755 0 0
 file /stage1/init /home/sarthak/android_kernel_samsung_smdk4412/usr/galaxys2_initramfs_files/init 755 0 0
+dir /res 755 0 0
+file /res/gps /home/sarthak/android_kernel_samsung_smdk4412/usr/galaxys2_initramfs_files/res/gps 755 0 0
+file /res/gpucat /home/sarthak/android_kernel_samsung_smdk4412/usr/galaxys2_initramfs_files/res/gpucat 755 0 0
+file /res/gpuwatch /home/sarthak/android_kernel_samsung_smdk4412/usr/galaxys2_initramfs_files/res/gpuwatch 755 0 0
+file /res/haveged /home/sarthak/android_kernel_samsung_smdk4412/usr/galaxys2_initramfs_files/res/haveged 755 0 0
+file /res/power.default.so /home/sarthak/android_kernel_samsung_smdk4412/usr/galaxys2_initramfs_files/res/power.default.so 755 0 0
+file /res/power.default.so.boostpulse /home/sarthak/android_kernel_samsung_smdk4412/usr/galaxys2_initramfs_files/res/power.default.so.boostpulse 755 0 0
+file /res/uci.sh /home/sarthak/android_kernel_samsung_smdk4412/usr/galaxys2_initramfs_files/res/uci.sh 755 01000 01003
+file /res/update.url /home/sarthak/android_kernel_samsung_smdk4412/usr/galaxys2_initramfs_files/res/update.url 755 01000 01003
+dir /res/customconfig 755 0 0
+file /res/customconfig/customconfig.xml /home/sarthak/android_kernel_samsung_smdk4412/usr/galaxys2_initramfs_files/res/customconfig/customconfig.xml 755 0 0
+file /res/customconfig/customconfig-helper /home/sarthak/android_kernel_samsung_smdk4412/usr/galaxys2_initramfs_files/res/customconfig/customconfig-helper 755 0 0
+file /res/customconfig/default.profile /home/sarthak/android_kernel_samsung_smdk4412/usr/galaxys2_initramfs_files/res/customconfig/default.profile 755 0 0
+dir /res/customconfig/actions 755 0 0
+file /res/customconfig/actions/backup /home/sarthak/android_kernel_samsung_smdk4412/usr/galaxys2_initramfs_files/res/customconfig/actions/backup 755 0 0
+file /res/customconfig/actions/bln_effect /home/sarthak/android_kernel_samsung_smdk4412/usr/galaxys2_initramfs_files/res/customconfig/actions/bln_effect 755 0 0
+file /res/customconfig/actions/cfs-tweaks /home/sarthak/android_kernel_samsung_smdk4412/usr/galaxys2_initramfs_files/res/customconfig/actions/cfs-tweaks 755 0 0
+file /res/customconfig/actions/chargecurrent /home/sarthak/android_kernel_samsung_smdk4412/usr/galaxys2_initramfs_files/res/customconfig/actions/chargecurrent 755 0 0
+file /res/customconfig/actions/cpu-voltage /home/sarthak/android_kernel_samsung_smdk4412/usr/galaxys2_initramfs_files/res/customconfig/actions/cpu-voltage 755 0 0
+file /res/customconfig/actions/generic /home/sarthak/android_kernel_samsung_smdk4412/usr/galaxys2_initramfs_files/res/customconfig/actions/generic 755 0 0
+file /res/customconfig/actions/generic01 /home/sarthak/android_kernel_samsung_smdk4412/usr/galaxys2_initramfs_files/res/customconfig/actions/generic01 755 0 0
+file /res/customconfig/actions/generic_cortex /home/sarthak/android_kernel_samsung_smdk4412/usr/galaxys2_initramfs_files/res/customconfig/actions/generic_cortex 755 0 0
+file /res/customconfig/actions/gpu-freq /home/sarthak/android_kernel_samsung_smdk4412/usr/galaxys2_initramfs_files/res/customconfig/actions/gpu-freq 755 0 0
+file /res/customconfig/actions/gpu-staycount /home/sarthak/android_kernel_samsung_smdk4412/usr/galaxys2_initramfs_files/res/customconfig/actions/gpu-staycount 755 0 0
+file /res/customconfig/actions/gpu-thresh /home/sarthak/android_kernel_samsung_smdk4412/usr/galaxys2_initramfs_files/res/customconfig/actions/gpu-thresh 755 0 0
+file /res/customconfig/actions/gpu-voltage /home/sarthak/android_kernel_samsung_smdk4412/usr/galaxys2_initramfs_files/res/customconfig/actions/gpu-voltage 755 0 0
+file /res/customconfig/actions/mediascanner /home/sarthak/android_kernel_samsung_smdk4412/usr/galaxys2_initramfs_files/res/customconfig/actions/mediascanner 755 0 0
+file /res/customconfig/actions/navigationbar /home/sarthak/android_kernel_samsung_smdk4412/usr/galaxys2_initramfs_files/res/customconfig/actions/navigationbar 755 0 0
+file /res/customconfig/actions/remove /home/sarthak/android_kernel_samsung_smdk4412/usr/galaxys2_initramfs_files/res/customconfig/actions/remove 755 0 0
+file /res/customconfig/actions/remove-root /home/sarthak/android_kernel_samsung_smdk4412/usr/galaxys2_initramfs_files/res/customconfig/actions/remove-root 755 0 0
+file /res/customconfig/actions/reset-fuelgauge /home/sarthak/android_kernel_samsung_smdk4412/usr/galaxys2_initramfs_files/res/customconfig/actions/reset-fuelgauge 755 0 0
+file /res/customconfig/actions/restore /home/sarthak/android_kernel_samsung_smdk4412/usr/galaxys2_initramfs_files/res/customconfig/actions/restore 755 0 0
+file /res/customconfig/actions/schedfeat /home/sarthak/android_kernel_samsung_smdk4412/usr/galaxys2_initramfs_files/res/customconfig/actions/schedfeat 755 0 0
+file /res/customconfig/actions/scrollcache /home/sarthak/android_kernel_samsung_smdk4412/usr/galaxys2_initramfs_files/res/customconfig/actions/scrollcache 755 0 0
+file /res/customconfig/actions/sound_volume /home/sarthak/android_kernel_samsung_smdk4412/usr/galaxys2_initramfs_files/res/customconfig/actions/sound_volume 755 0 0
+file /res/customconfig/actions/test-bln /home/sarthak/android_kernel_samsung_smdk4412/usr/galaxys2_initramfs_files/res/customconfig/actions/test-bln 755 0 0
+file /res/customconfig/actions/usb-mode /home/sarthak/android_kernel_samsung_smdk4412/usr/galaxys2_initramfs_files/res/customconfig/actions/usb-mode 755 0 0
+file /res/customconfig/actions/vmtweaks /home/sarthak/android_kernel_samsung_smdk4412/usr/galaxys2_initramfs_files/res/customconfig/actions/vmtweaks 755 0 0
+dir /res/customconfig/gps.conf 755 0 0
+file /res/customconfig/gps.conf/gps.conf.africa /home/sarthak/android_kernel_samsung_smdk4412/usr/galaxys2_initramfs_files/res/gps.conf/gps.conf.africa 755 0 0
+file /res/customconfig/gps.conf/gps.conf.asia /home/sarthak/android_kernel_samsung_smdk4412/usr/galaxys2_initramfs_files/res/gps.conf/gps.conf.asia 755 0 0
+file /res/customconfig/gps.conf/gps.conf.europe /home/sarthak/android_kernel_samsung_smdk4412/usr/galaxys2_initramfs_files/res/gps.conf/gps.conf.europe 755 0 0
+file /res/customconfig/gps.conf/gps.conf.north-america /home/sarthak/android_kernel_samsung_smdk4412/usr/galaxys2_initramfs_files/res/gps.conf/gps.conf.north-america 755 0 0
+file /res/customconfig/gps.conf/gps.conf.oceania /home/sarthak/android_kernel_samsung_smdk4412/usr/galaxys2_initramfs_files/res/gps.conf/gps.conf.oceania 755 0 0
+file /res/customconfig/gps.conf/gps.conf.south-america /home/sarthak/android_kernel_samsung_smdk4412/usr/galaxys2_initramfs_files/res/gps.conf/gps.conf.south-america 755 0 0
+dir /sbin 755 0 0
+dir /sbin/ext 755 0 0
+file /sbin/ext/efs-backup.sh /home/sarthak/android_kernel_samsung_smdk4412/usr/galaxys2_initramfs_files/sbin/ext/efs-backup.sh 755 0 0
+file /sbin/ext/haveged.sh /home/sarthak/android_kernel_samsung_smdk4412/usr/galaxys2_initramfs_files/sbin/ext/haveged.sh 755 0 0
+file /sbin/ext/install.sh /home/sarthak/android_kernel_samsung_smdk4412/usr/galaxys2_initramfs_files/sbin/ext/install.sh 755 0 0
+file /sbin/ext/mdnie-sharpness-tweak.sh /home/sarthak/android_kernel_samsung_smdk4412/usr/galaxys2_initramfs_files/sbin/ext/mdnie-sharpness-tweak.sh 755 0 0
+file /sbin/ext/modules.sh /home/sarthak/android_kernel_samsung_smdk4412/usr/galaxys2_initramfs_files/sbin/ext/modules.sh 755 0 0
+file /sbin/ext/post-init.sh /home/sarthak/android_kernel_samsung_smdk4412/usr/galaxys2_initramfs_files/sbin/ext/post-init.sh 755 0 0
+file /sbin/ext/properties.sh /home/sarthak/android_kernel_samsung_smdk4412/usr/galaxys2_initramfs_files/sbin/ext/properties.sh 755 0 0
+file /sbin/ext/run-init-scripts.sh /home/sarthak/android_kernel_samsung_smdk4412/usr/galaxys2_initramfs_files/sbin/ext/run-init-scripts.sh 755 0 0
+file /sbin/ext/su-helper.sh /home/sarthak/android_kernel_samsung_smdk4412/usr/galaxys2_initramfs_files/sbin/ext/su-helper.sh 755 0 0
+file /sbin/ext/thunderbolt.sh /home/sarthak/android_kernel_samsung_smdk4412/usr/galaxys2_initramfs_files/sbin/ext/thunderbolt.sh 755 0 0
+file /sbin/ext/tweaks.sh /home/sarthak/android_kernel_samsung_smdk4412/usr/galaxys2_initramfs_files/sbin/ext/tweaks.sh 755 0 0
 dir /sys 755 0 0
-dir /stage1/lib 755 0 0
-dir /stage1/lib/modules 755 0 0
-file /stage1/lib/modules/Si4709_driver.ko drivers/samsung/fm_si4709/Si4709_driver.ko 644 0 0
-file /stage1/lib/modules/dhd.ko drivers/net/wireless/bcmdhd/dhd.ko 644 0 0
-file /stage1/lib/modules/scsi_wait_scan.ko drivers/scsi/scsi_wait_scan.ko 644 0 0
-dir /stage1/stage1/res 755 0 0
-dir /stage1/res/customconfig 755 0 0
-dir /stage1/res/customconfig/actions 755 0 0
-file /stage1/res/STweaks.apk usr/stweaks/STweaks.apk 644 0 0
-file /stage1/res/uci.sh usr/stweaks/uci.sh 644 0 0
-file /stage1/res/update.url usr/stweaks/update.url 644 0 0
-file /stage1/res/customconfig/customconfig.xml usr/stweaks/customconfig/customconfig.xml 644 0 0
-file /stage1/res/customconfig/customconfig-helper usr/stweaks/customconfig/customconfig-helper 644 0 0
-file /stage1/res/customconfig/default.profile usr/stweaks/customconfig/default.profile 644 0 0
-file /stage1/res/customconfig/actions/bln_effect usr/stweaks/customconfig/actions/bln_effect 644 0 0
-file /stage1/res/customconfig/actions/cfs-tweaks usr/stweaks/customconfig/actions/cfs-tweaks 644 0 0
-file /stage1/res/customconfig/actions/efs-backup usr/stweaks/customconfig/actions/efs-backup 644 0 0
-file /stage1/res/customconfig/actions/generic usr/stweaks/customconfig/actions/generic 644 0 0
-file /stage1/res/customconfig/actions/generic01 usr/stweaks/customconfig/actions/generic01 644 0 0
-file /stage1/res/customconfig/actions/generickmem usr/stweaks/customconfig/actions/generickmem 644 0 0
-file /stage1/res/customconfig/actions/generickmem01 usr/stweaks/customconfig/actions/generickmem01 644 0 0
-file /stage1/res/customconfig/actions/gpu-freq usr/stweaks/customconfig/actions/gpu-freq 644 0 0
-file /stage1/res/customconfig/actions/gpu-staycount usr/stweaks/customconfig/actions/gpu-staycount 644 0 0
-file /stage1/res/customconfig/actions/gpu-thresh usr/stweaks/customconfig/actions/gpu-thresh 644 0 0
-file /stage1/res/customconfig/actions/gpu-voltage usr/stweaks/customconfig/actions/gpu-voltage 644 0 0
-file /stage1/res/customconfig/actions/overclock usr/stweaks/customconfig/actions/overclock 644 0 0
-file /stage1/res/customconfig/actions/reset-fuelgauge usr/stweaks/customconfig/actions/reset-fuelgauge 644 0 0
-file /stage1/stage1/res/customconfig/actions/schedfeat usr/stweaks/customconfig/actions/schedfeat 644 0 0
-file /stage1/res/customconfig/actions/secondcore usr/stweaks/customconfig/actions/secondcore 644 0 0
-file /stage1/res/customconfig/actions/test-bln usr/stweaks/customconfig/actions/test-bln 644 0 0
-file /stage1/res/customconfig/actions/usb-mode usr/stweaks/customconfig/actions/usb-mode 644 0 0
-file /stage1/res/customconfig/actions/zram usr/stweaks/customconfig/actions/zram 644 0 0
 dir /mnt 755 0 0
 dir /mnt/.lfs 755 0 0
-file /stage1/boot.cpio /home/sarthak/android_kernel_samsung_smdk4412/usr/ramdisk.cpio 644 0 0
-file /stage1/recovery.cpio /home/sarthak/android_kernel_samsung_smdk4412/usr/ramdisk-recovery.cpio 644 0 0
-
+file /stage1/boot.cpio /home/sarthak/android_kernel_samsung_smdk4412/usr/ramdisk-mr2.cpio 644 0 0
+file /stage1/recovery.cpio /home/sarthak/android_kernel_samsung_smdk4412/usr/ramdisk-recovery-mr2.cpio 644 0 0
